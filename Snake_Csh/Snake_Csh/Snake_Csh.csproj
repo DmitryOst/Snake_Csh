@@ -46,6 +46,7 @@
     <Compile Include="..\..\..\snake\Snake\Snake\Point.cs">
       <Link>Point.cs</Link>
     </Compile>
+    <Compile Include="HorizontalLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
