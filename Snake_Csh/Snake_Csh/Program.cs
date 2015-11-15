@@ -17,6 +17,7 @@ namespace Snake_Csh
 			p2.Draw();
 
             Console.WriteLine("Create horizontal and vertical line");
+            Console.WriteLine("\n");
 
             HorizontalLine hline = new HorizontalLine(3, 35, 4, '*'); 
             hline.Draw();
