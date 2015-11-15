@@ -16,8 +16,11 @@ namespace Snake_Csh
 			Point p2 = new Point(4, 5, '#');
 			p2.Draw();
 
-            HorizontalLine line = new HorizontalLine(3, 35, 4, '*'); 
-            line.Draw();
+            HorizontalLine hline = new HorizontalLine(3, 35, 4, '*'); 
+            hline.Draw();
+
+            VerticalLine vline = new VerticalLine(4, 20, 36, 'x');
+            vline.Draw();
 
             Console.ReadLine();
      	}
