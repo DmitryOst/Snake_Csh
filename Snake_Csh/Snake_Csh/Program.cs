@@ -10,20 +10,22 @@ namespace Snake_Csh
 	{
 		static void Main( string[] args )
 		{
-			Point p1 = new Point(1, 3, '*');
-			p1.Draw();
+            Console.SetBufferSize(80, 25);
 
-			Point p2 = new Point(4, 5, '#');
-			p2.Draw();
+            //Рисуем рамочку
+            HorizontalLine hlineUp = new HorizontalLine(0, 78, 0, '*');
+            HorizontalLine hlineDown = new HorizontalLine(0, 78, 24, '*');
+            VerticalLine vlineLeft = new VerticalLine(0, 24, 0, 'x');
+            VerticalLine vlineRight = new VerticalLine(0, 24, 78, 'x');
 
-            Console.WriteLine("Create horizontal and vertical line");
-            Console.WriteLine("\n");
+            hlineUp.Draw();
+            vlineRight.Draw();
+            hlineDown.Draw();
+            vlineLeft.Draw();
 
-            HorizontalLine hline = new HorizontalLine(3, 35, 4, '*'); 
-            hline.Draw();
-
-            VerticalLine vline = new VerticalLine(4, 20, 36, 'x');
-            vline.Draw();
+            //Рисуем точку
+            Point p = new Point(39,12,'*');
+            p.Draw();
 
             Console.ReadLine();
      	}
