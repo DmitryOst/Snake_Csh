@@ -24,8 +24,9 @@ namespace Snake_Csh
             vlineLeft.Draw();
 
             //Рисуем точку
-            Point p = new Point(39,12,'*');
-            p.Draw();
+            Point p = new Point(4,5,'*');
+            Snake snake = new Snake(p, 5, Direction.RIGHT);
+            snake.Draw();
 
             Console.ReadLine();
      	}
