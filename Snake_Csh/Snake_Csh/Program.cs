@@ -28,22 +28,17 @@ namespace Snake_Csh
             Point p = new Point(4,5,'*');
             Snake snake = new Snake(p, 5, Direction.DOWN);
             snake.Draw();
-            snake.Move();
 
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    snake.ChangeDirection( Console.ReadKey().Key );
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
 
-            Console.ReadLine();
      	}
 	}
 }
