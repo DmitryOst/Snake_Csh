@@ -11,18 +11,14 @@ namespace Snake_Csh
 	{
 		static void Main( string[] args )
 		{
-            Console.SetBufferSize(80, 25);
+            int bufferSize_x = 80;
+            int bufferSize_y = 25;
+
+            Console.SetBufferSize(bufferSize_x, bufferSize_y);
 
             //Рисуем рамочку
-            HorizontalLine hlineUp = new HorizontalLine(0, 78, 0, '*');
-            HorizontalLine hlineDown = new HorizontalLine(0, 78, 24, '*');
-            VerticalLine vlineLeft = new VerticalLine(0, 24, 0, 'x');
-            VerticalLine vlineRight = new VerticalLine(0, 24, 78, 'x');
-
-            hlineUp.Draw();
-            vlineRight.Draw();
-            hlineDown.Draw();
-            vlineLeft.Draw();
+            Walls walls = new Walls(bufferSize_x, bufferSize_y);
+            walls.Draw();
 
             //Рисуем точку
             Point p = new Point(4,5,'*');
@@ -33,8 +29,14 @@ namespace Snake_Csh
             Point food = foodCreator.CreateFood();
             food.Draw();
 
+
             while (true)
             {
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
+
                 if(snake.Eat( food ))
                 {
                     food = foodCreator.CreateFood();

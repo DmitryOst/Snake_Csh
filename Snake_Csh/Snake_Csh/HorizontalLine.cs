@@ -17,5 +17,17 @@ namespace Snake_Csh
             } 
         }
 
+        public override void Draw()
+        {
+            ConsoleColor currForegroundColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            //foreach(Point p in pList)
+            //{
+            //    p.Draw();
+            //}
+            base.Draw();
+            Console.ForegroundColor = currForegroundColor;
+        }
+
     }
 }
