@@ -23,7 +23,8 @@ namespace Snake_Csh
         {
             foreach(var p in pList)
             {
-                if (figure.IsHit(p)) return true;
+                if (figure.IsHit(p))
+                    return true;
             }
             return false;
         }
@@ -32,7 +33,8 @@ namespace Snake_Csh
         {
             foreach (var p in pList)
             {
-                if (point.IsHit(p)) return true;
+                if (point.IsHit(p))
+                    return true;
             }
             return false;
         }

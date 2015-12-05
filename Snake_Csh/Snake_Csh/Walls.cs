@@ -12,6 +12,7 @@ namespace Snake_Csh
 
         public Walls( int mapWidth, int mapHeight)
         {
+            wallList = new List<Figure>();
             HorizontalLine hlineUp = new HorizontalLine(0, mapWidth - 2, 0, 'x');
             HorizontalLine hlineDown = new HorizontalLine(0, mapWidth - 2, mapHeight - 1, 'x');
             VerticalLine vlineLeft = new VerticalLine(0, mapHeight - 1, 0, 'x');
@@ -27,7 +28,8 @@ namespace Snake_Csh
         {
             foreach( var wall in wallList)
             {
-                if (wall.IsHit(figure))  return true;
+                if (wall.IsHit(figure))
+                    return true;
             }
             return false;
         }
