@@ -61,5 +61,19 @@ namespace Snake_Csh
                     break;
                 }
          }
+
+        public bool Eat(Point food)
+        {
+//            Point head = GetNextPoint();
+            Point head = pList.Last();
+            if (head.IsHit( food ))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                //food.Draw();
+                return true;
+            }
+            else  return false;
+        }
     }
 }

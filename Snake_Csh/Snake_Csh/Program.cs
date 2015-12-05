@@ -29,14 +29,30 @@ namespace Snake_Csh
             Snake snake = new Snake(p, 5, Direction.DOWN);
             snake.Draw();
 
+            FoodCreator foodCreator = new FoodCreator( 80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
             while (true)
             {
-                if (Console.KeyAvailable)
+                if(snake.Eat( food ))
                 {
-                    snake.ChangeDirection( Console.ReadKey().Key );
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
                 }
                 Thread.Sleep(100);
-                snake.Move();
+
+
+                if (Console.KeyAvailable)
+                {
+//                    ConsoleKeyInfo key = Console.ReadKey();
+//                    snake.ChangeDirection(key.Key);
+                    snake.ChangeDirection( Console.ReadKey().Key );
+                }
             }
 
      	}
